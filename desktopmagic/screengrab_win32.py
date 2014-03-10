@@ -310,7 +310,10 @@ def getBGR32(dc, bitmap):
 
 
 def _getRectAsImage(rect):
-	import Image
+	try:
+		from PIL import Image
+	except:
+		import Image
 
 	dc, bitmap = getDCAndBitMap(rect=rect)
 	try:
